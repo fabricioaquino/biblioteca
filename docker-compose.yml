@@ -1,0 +1,41 @@
+version: "3.8"
+
+services:
+  mysql:
+    image: mysql:latest
+    container_name: biblioteca-mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: biblioteca
+      MYSQL_USER: user
+      MYSQL_PASSWORD: root
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql_data:/var/lib/mysql
+    networks:
+      - biblioteca
+
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: biblioteca-php
+    restart: always
+    volumes:
+      - /c/www/biblioteca:/var/www/html
+      # As duas linhas abaixo criam volumes internos (não sincronizados com o Windows)
+      - /var/www/html/vendor
+      - /var/www/html/bootstrap/cache
+    ports:
+      - "8181:80" # Apache
+      - "5173:5173"   # Vite dev server
+    depends_on:
+      - mysql
+    networks:
+      - biblioteca
+
+networks:
+  biblioteca:
+    driver: bridge
