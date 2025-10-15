@@ -14,6 +14,11 @@ services:
       - "3306:3306"
     volumes:
       - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-proot"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
     networks:
       - biblioteca
 
@@ -24,7 +29,7 @@ services:
     container_name: biblioteca-php
     restart: always
     volumes:
-      - /c/www/biblioteca:/var/www/html
+      - ./:/var/www/html 
       # As duas linhas abaixo criam volumes internos (não sincronizados com o Windows)
       - /var/www/html/vendor
       - /var/www/html/bootstrap/cache
@@ -32,7 +37,8 @@ services:
       - "8181:80" # Apache
       - "5173:5173"   # Vite dev server
     depends_on:
-      - mysql
+      mysql:
+        condition: service_healthy
     networks:
       - biblioteca
 
