@@ -31,5 +31,14 @@ RUN chown -R www-data:www-data /var/www/html \
     && chown -R www-data:www-data storage bootstrap/cache \
     && chmod -R 777 storage bootstrap/cache
 
+# Instalar Node.js + npm
+RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
+    && apt-get install -y nodejs
+
+RUN apt-get install -y npm
+
+# Verificar
+RUN node -v && npm -v
+
 # Comando padrão
 CMD ["apache2-foreground"]

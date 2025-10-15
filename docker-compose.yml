@@ -13,7 +13,7 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - ./mysql_data:/var/lib/mysql
+      - mysql_data:/var/lib/mysql
     networks:
       - biblioteca
 
@@ -39,3 +39,6 @@ services:
 networks:
   biblioteca:
     driver: bridge
+
+volumes:
+  mysql_data:
