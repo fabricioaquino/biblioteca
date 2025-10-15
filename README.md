@@ -22,12 +22,8 @@ git clone https://github.com/fabricioaquino/biblioteca.git
 cd biblioteca
 ```
 
-### 2. Execute o script `setup.ps1` se estiver no Windows ou `makefile` se estiver usando Linux
+### 2. Execute o script `setup.ps1` se estiver no Windows
 - Windows
 ```bash
 .\setup.ps1
-```
-- Linux
-```bash
-make setup
 ```
