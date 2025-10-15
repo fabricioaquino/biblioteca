@@ -58,9 +58,7 @@ class AssuntoController extends Controller
         $assunto = Assunto::findOrFail($id);
 
         if (! $assunto->safeDelete()) {
-            return redirect()
-                ->route('assuntos.index')
-                ->with('error', 'Não é possível excluir um assunto associado a livros.');
+            return response()->json(['message' => 'Não é possível excluir um assunto associado a livros.'], 403);
         }
 
         return response()->json(['message' => 'Assunto excluído com sucesso!']);

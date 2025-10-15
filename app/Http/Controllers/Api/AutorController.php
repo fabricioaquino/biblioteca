@@ -57,9 +57,7 @@ class AutorController extends Controller
         $autor = Autor::findOrFail($id);
 
         if (! $autor->safeDelete()) {
-            return redirect()
-                ->route('autores.index')
-                ->with('error', 'Não é possível excluir um autor associado a livros.');
+            return response()->json(['message' => 'Não é possível excluir um autor associado a livros.'], 403);
         }
 
         return response()->json(['message' => 'Autor excluído com sucesso!']);

@@ -82,11 +82,8 @@ class LivroController extends Controller
      */
     public function destroy(string $id)
     {
-        // Excluir livro e relacionamentos
         $livro = Livro::findOrFail($id);
-        $livro->autores()->detach();
-        $livro->assuntos()->detach();
-        $livro->delete();
+        $livro->deleteWithRelations();
 
         return redirect()->route('livros.index')->with('success', 'Livro excluído com sucesso!');
     }

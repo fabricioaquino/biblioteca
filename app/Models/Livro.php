@@ -94,4 +94,17 @@ class Livro extends Model
             $this->assuntos()->sync($dados['assunto_ids']);
         }
     }
+
+    /**
+     * Método para excluir livro e limpar relacionamentos
+     */
+    public function deleteWithRelations(): bool
+    {
+        // Desvincula os autores e assuntos
+        $this->autores()->detach();
+        $this->assuntos()->detach();
+
+        // Exclui o próprio livro
+        return $this->delete();
+    }
 }

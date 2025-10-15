@@ -4,17 +4,12 @@
     <meta charset="UTF-8">
     <title>Biblioteca</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <link rel="stylesheet" href="{{ asset('vendor/select2.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/select2-bootstrap-5-theme.min.css') }}">
 
-    <!-- Select2 principal -->
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-
-    <!-- Tema Bootstrap 5 bonito -->
-    <link href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" rel="stylesheet" />
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
-
-
+    <script src="{{ asset('vendor/jquery.min.js') }}"></script>
+    <script src="{{ asset('vendor/jquery.mask.min.js') }}"></script>
+    <script src="{{ asset('vendor/select2.min.js') }}"></script>
 </head>
 
 <body class="bg-light">
@@ -42,9 +37,6 @@
         @yield('content')
     </main>
 
-
-
-<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
 <script>
     $(document).ready(function() {
