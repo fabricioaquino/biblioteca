@@ -27,3 +27,8 @@ cd biblioteca
 ```bash
 .\setup.ps1
 ```
+
+### 3. Projeto tem rotas para API, a documentação pode ser acessada em
+```bash
+https://documenter.getpostman.com/view/49272029/2sB3QNooBV
+```
