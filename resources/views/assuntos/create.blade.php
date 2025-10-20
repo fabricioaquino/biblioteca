@@ -19,7 +19,7 @@
         @csrf
         <div class="mb-3">
             <label for="descricao" class="form-label">Descrição do Assunto</label>
-            <input type="text" class="form-control" id="descricao" name="descricao" placeholder="Ex: Ficção, Romance, Suspense..." value="{{ old('descricao') }}" required>
+            <input type="text" class="form-control" id="descricao" name="descricao" placeholder="Ex: Ficção, Romance, Suspense..." maxlength="20" value="{{ old('descricao') }}" required>
         </div>
         <div class="text-end">
             <button type="submit" class="btn btn-success">Salvar</button>

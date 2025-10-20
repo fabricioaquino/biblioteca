@@ -8,7 +8,7 @@
 
 {{-- Mensagens de sucesso --}}
 @if (session('success'))
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
+    <div class="alert alert-success alert-dismissible fade show" role="alert" id="alerta-sucesso">
         {{ session('success') }}
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fechar"></button>
     </div>

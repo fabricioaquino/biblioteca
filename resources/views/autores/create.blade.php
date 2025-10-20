@@ -19,7 +19,7 @@
         @csrf
         <div class="mb-3">
             <label for="nome" class="form-label">Nome do Autor</label>
-            <input type="text" class="form-control" id="nome" name="nome" placeholder="Ex: Clarice Lispector" value="{{ old('nome') }}" required>
+            <input type="text" class="form-control" id="nome" name="nome" placeholder="Ex: Clarice Lispector" maxlength="40" value="{{ old('nome') }}" required>
         </div>
         <div class="text-end">
             <button type="submit" class="btn btn-success">Salvar</button>

@@ -30,11 +30,11 @@
             </div>
             <div class="col-md-3">
                 <label class="form-label">Edição</label>
-                <input type="number" name="edicao" class="form-control" value="{{ old('edicao', $livro->edicao) }}">
+                <input type="number" name="edicao" class="form-control" value="{{ old('edicao', $livro->edicao) }}" required>
             </div>
             <div class="col-md-3">
                 <label class="form-label">Ano</label>
-                <input type="text" name="ano_publicacao" class="form-control" value="{{ old('ano_publicacao', $livro->ano_publicacao) }}">
+                <input type="text" name="ano_publicacao" class="form-control" value="{{ old('ano_publicacao', $livro->ano_publicacao) }}" required>
             </div>
             <div class="col-md-3">
                 <label class="form-label">Valor (R$)</label>

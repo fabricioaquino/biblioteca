@@ -29,11 +29,11 @@
             </div>
             <div class="col-md-3">
                 <label class="form-label">Edição</label>
-                <input type="number" name="edicao" class="form-control" min="1" value="{{ old('edicao') }}">
+                <input type="number" name="edicao" class="form-control" min="1" value="{{ old('edicao') }}" required>
             </div>
             <div class="col-md-3">
                 <label class="form-label">Ano</label>
-                <input type="text" name="ano_publicacao" class="form-control" placeholder="2025" min="1" maxlength="{{ date('Y') }}" value="{{ old('ano_publicacao') }}">
+                <input type="text" name="ano_publicacao" class="form-control" placeholder="2025" min="1" maxlength="{{ date('Y') }}" value="{{ old('ano_publicacao') }}" required>
             </div>
             <div class="col-md-3">
                 <label class="form-label">Valor (R$)</label>
